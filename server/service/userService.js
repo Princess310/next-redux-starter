@@ -1,8 +1,9 @@
-const userDao = require('../dao/userDao');
+const UserDao = require('../dao/userDao');
+const userDao = new UserDao();
 
 class UserSevice {
-  static getList() {
-    const users = userDao.findAll();
+  async getListByName(name = '') {
+    const users = await userDao.getListByName(name);
     return users;
   }
 }

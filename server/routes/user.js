@@ -1,11 +1,12 @@
 const express = require('express');
-const userService = require('../service/userService');
+const UserService = require('../service/userService');
+const userService = new UserService();
 
 const userRoute = express.Router();
 
-userRoute.get('/getList', (req, res) => {
-  userService.getList();
-  res.send('get list');
+userRoute.get('/getList', async (req, res) => {
+  const users = await userService.getListByName('test');
+  res.send(users);
 });
 
 module.exports = userRoute;

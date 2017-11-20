@@ -2,17 +2,29 @@ const daoHelper = require('./daoHelper');
 const BaseDao = require('./baseDao');
 const User = require('../entity/user');
 
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
+
 class UserDao extends BaseDao {
   constructor() {
-    super('user');
+    super(User);
   }
 
-  // so, we need use async on node version > 7
-  static findAll() {
-    User.findAll().then((users) => {
-      // console.log('users', users);
-      return users;
+  async getListByName(name) {
+    const users = await this.list({
+      [Op.or]: [
+        {
+          firstName: {
+            [Op.like]: `%${name}%`,
+          },
+        }, {
+          lastName: {
+            [Op.like]: `%${name}%`,
+          },
+        }
+      ],
     });
+    return users;
   }
 }
 
