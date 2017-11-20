@@ -1,4 +1,4 @@
-Based on next.js, add add the redux things for project.
+Based on next.js, and add the redux things for project.
 
 Tasks List:
 - [x] add redux and code split
