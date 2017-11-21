@@ -39,6 +39,9 @@ class BaseDao {
       where: condition,
       offset: (page - 1) * pageSize,
       limit: pageSize,
+      order: [
+        ['id', orderBy],
+      ],
     });
 
     const { rows, count } = result;

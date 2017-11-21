@@ -1,5 +1,6 @@
 const express = require('express');
 const next = require('next');
+const bodyParser = require('body-parser');
 const startRoutes = require('./routes');
 
 const dev = process.env.NODE_ENV !== 'production';
@@ -9,6 +10,8 @@ const handle = app.getRequestHandler();
 app.prepare()
 .then(() => {
   const server = express();
+  // apply middlewares
+  server.use(bodyParser.urlencoded({ extended: false }))
 
   startRoutes(server);
 

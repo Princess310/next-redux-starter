@@ -15,7 +15,6 @@ class About extends React.Component {
 
   render () {
     const { info } = this.props;
-    console.log(this.props);
 
     return (
       <Container>
