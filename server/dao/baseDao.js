@@ -34,7 +34,7 @@ class BaseDao {
     return result;
   }
 
-  async list(condition = {}, page = 1, pageSize = 10, orderBy = 'ASC') {
+  async list(condition = {}, page = 1, pageSize = 10, orderBy = 'ASC', other) {
     const result = await this.entity.findAndCountAll({
       where: condition,
       offset: (page - 1) * pageSize,
@@ -42,6 +42,7 @@ class BaseDao {
       order: [
         ['id', orderBy],
       ],
+      ...other,
     });
 
     const { rows, count } = result;

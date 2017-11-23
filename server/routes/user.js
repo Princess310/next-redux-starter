@@ -5,7 +5,8 @@ const userService = new UserService();
 const userRoute = express.Router();
 
 userRoute.get('/getList', async (req, res) => {
-  const users = await userService.getListByName('test');
+  const { query: { name } } = req;
+  const users = await userService.getListByName(name);
   res.send(users);
 });
 
