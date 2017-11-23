@@ -1,6 +1,7 @@
 Based on next.js > 7 (which support async syntax), and add the redux things for project.
 
 Setup steps:
+
 1.need node && postgresql
 2.npm run install
 3.see the config.js under `server` folder, you should change the db info for yourself
