@@ -17,7 +17,7 @@ class GroupDao extends BaseDao {
       name: {
         [Op.like]: `%${name}%`,
       },
-    }, 1, 10, 'ASC', {
+    }, {
       include: [{
         model: User,
         through: GroupUser,

@@ -7,9 +7,9 @@ const GroupUser = require('../server/entity/groupUser');
 // you can use sync to create table here. eg below. 
 // force: true will drop the table if it already exists
 async function initDB() {
-  await GroupUser.sync({force: true});
   await Group.sync({force: true});
   await User.sync({force: true});
+  await GroupUser.sync({force: true});
   
   // table created, then init data for tables
   const group = await Group.create({
