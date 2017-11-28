@@ -16,8 +16,8 @@ async function initDB() {
     name: 'group-01',
   });
   const user = await User.create({
-    firstName: 'princess310',
-    lastName: 'jet',
+    username: 'princess310',
+    password: '123456',
   });
   const groupUser = await user.addGroup(group);
   

@@ -2,18 +2,8 @@ const Sequelize = require('sequelize');
 const sequelize = require('../dao/daoHelper');
 
 const User = sequelize.define('user', {
-  firstName: {
-    type: Sequelize.STRING
-  },
-  lastName: {
-    type: Sequelize.STRING
-  }
-}, {
-  getterMethods: {
-    fullName() {
-      return this.firstName + ' ' + this.lastName;
-    }
-  }
+  username: Sequelize.STRING,
+  password: Sequelize.STRING,
 });
 
 module.exports = User;
