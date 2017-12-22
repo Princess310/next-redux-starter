@@ -14,7 +14,7 @@ Tasks List:
 - [x] redux-saga
 - [x] express server
 - [x] api things, maybe use postgresql.Besides [Sql Orm: sequelize](https://github.com/sequelize/sequelize) need to know.
-- [ ] analyze
+- [x] analyze
 - [ ] jest
 - [ ] add git prehook to do code test
 - [ ] CLI to create components
